@@ -1,6 +1,6 @@
 
 const controller = require('../controller/auth.controller');
-const {signupVerify} = require('../middleware')
+const { signupVerify, verifyJwt } = require("../middleware");
 
 module.exports = (app) => {
 
@@ -12,4 +12,7 @@ module.exports = (app) => {
 
     // Route for signing
     app.post('/air/api/v1/signing', controller.signing);
+
+    // Route for logout
+    app.get('/air/api/v1/logout', [verifyJwt.verifyJwt], controller.logout);
 }

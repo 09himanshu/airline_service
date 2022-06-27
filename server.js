@@ -15,7 +15,7 @@ mongoose.connect(config.host, () => {
 
 // Read routes
 require('./routes/auth.routes')(app);
-
+require('./routes/booking.routes')(app);
 // App listen on port
 app.listen(config.port, () => {
     console.log(`Server started on port ${config.port}`);

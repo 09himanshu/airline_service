@@ -12,3 +12,30 @@ exports.userObj = (user) =>{
     return users;
 }
 
+exports.bookObj = (booked) => {
+    return {
+        to: booked.to,
+        from: booked.from,
+        date: booked.date,
+        airline: booked.airline,
+        fromTime: booked.fromTime,
+        toTime: booked.toTime,
+        price: booked.price
+    }
+}
+
+exports.arrayBooked = (book) => {
+    let booked = [];
+    book.forEach(ele => {
+        booked.push({
+            to: ele.to,
+            from: ele.from,
+            date: ele.date,
+            airline: ele.airline,
+            fromTime: ele.fromTime,
+            toTime: ele.toTime,
+            price: ele.price,
+        })
+    })
+    return booked;
+}

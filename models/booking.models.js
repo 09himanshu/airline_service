@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const booking = new mongoose.Schema({
   to: {
-    tye: String,
-    required: true,
+    type: String,
+    required: true
   },
   from: {
     type: String,
-    required: true,
+    required: true
   },
   date: {
     type: String,
@@ -15,22 +15,20 @@ const booking = new mongoose.Schema({
   },
   airline: {
     type: String,
-    required: true,
+    required: true
   },
   fromTime: {
     type: String,
-    required: true,
+    required: true
   },
   toTime: {
     type: String,
-    required: true,
+    required: true
   },
   price: {
     type: Number,
-    required: true,
-  },
-  user: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'user'
+    required: true
   },
 });
+
+module.exports = mongoose.model('booking', booking);

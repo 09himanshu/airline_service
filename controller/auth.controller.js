@@ -60,6 +60,18 @@ exports.signing = async (req, res) => {
     }
 }
 
+// Handler for logout
+exports.logout = async (req, res) => {
+    const _id = req._id;
+    try{
+        await User.findByIdAndRemove({_id});
+        res.status(200).send({message: `Logout successfully`});
+    } catch(err) {
+        res.status(500).send({message: `Error occur at ${err}`});
+    }
+}
+
+// Fetch all users
 exports.findAll = async (req, res) => {
     try {
         const user = await User.find();
