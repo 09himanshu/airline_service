@@ -39,3 +39,13 @@ exports.arrayBooked = (book) => {
     })
     return booked;
 }
+
+// Feedback form
+exports.feedbackObj = (form) => {
+  return {
+    name: form.name,
+    rating: form.rating,
+    origin: form.origin,
+    queryType: form.queryType
+  };
+};
